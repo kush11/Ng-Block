@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row" style="text-align: left">
+        <div class="col-md-12">
+            <form #createBlogForm="ngForm" (ngSubmit)="createBlog()">
+                {{createBlogForm.value |json }}
+                <div class="form-group">
+                    <label>Blog Title</label>
+                    <input type="text" class="form-control" ngModel name="blogTitle" placeholder="Enter blog Title" required>
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <input type="text" class="form-control" ngModel name="blogDescription" placeholder="Enter blog Description"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label>Enter Blog Body</label>
+                    <textarea type="text" class="form-control" ngModel name="blogBody" row="3" placeholder="Enter blog Body"
+                        required>
+                    </textarea>
+                </div>
+                <div class="form-group">
+                    <label>Category</label>
+                    <select class="form-control custom-select" name="category" ngModel id="category" required>
+                        <option selected>Choose Category</option>
+                        <option *ngFor="let category of possibleCategory">{{category}}</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-default">Create</button>
+            </form>
+        </div>
+    </div>
+</div>
